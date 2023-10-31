@@ -61,4 +61,4 @@ class UserViewsTestCase(TestCase):
             html = resp.get_data(as_text=True)
 
             self.assertEqual(resp.status_code, 200)
-            self.assertIn("<h1>Donald</h1>", html)
+            self.assertIn("<h1>Donald Trump</h1>", html)

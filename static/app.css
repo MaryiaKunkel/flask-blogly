@@ -1,0 +1,71 @@
+button {
+  color: white;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  border: none;
+}
+
+#user_listing_add_button {
+  background-color: grey;
+}
+
+input {
+  width: 200px;
+}
+
+.container {
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+#new_user_add_button,
+#save_button {
+  background-color: rgb(0, 202, 0);
+  margin-left: 220px;
+}
+
+#cancel_button {
+  background-color: white;
+  color: blue;
+  border: solid blue;
+  margin-top: 200px;
+  margin-left: -150px;
+}
+
+html {
+  /* width: 500px; */
+  display: flex;
+  justify-content: center;
+}
+
+.user_detail_page {
+  display: flex;
+  /* align-items: center; */
+  width: 200px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  object-fit: cover;
+}
+
+#edit_button {
+  background-color: blue;
+  margin-top: 80px;
+  margin-left: -100px;
+}
+
+#delete_button {
+  background-color: red;
+  margin-top: 80px;
+  margin-left: -20px;
+}
+
+#name {
+  /* margin-left: 250px; */
+  margin-top: 0;
+  margin-left: 10px;
+}
