@@ -38,9 +38,11 @@ class Post(db.Model):
 
     users=db.relationship('User', backref='posts')
 
-
     def __repr__(self):
         return f'<Post id={self.id}, title "{self.title}", content "{self.content}", created_at {self.created_at}>'
+    
+    def description(self):
+        return f'The title is {self.title}, the content is {self.content}'
     
 def get_directory():
     all_posts=Post.query.all()

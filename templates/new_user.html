@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 {% block title %}New User{% endblock %}
 {% block content %}
-
+<div class="new_user_page">
     <form  action='/users/new' method="POST">
         <h1>Create a user</h1>
         <label for="first_name">First Name</label></br>
@@ -16,9 +16,10 @@
         <input type="text" name="image_url" id="image_url" placeholder="Provide an image of this user"></br></br>
         
         <div class="container">
-            <button id="new_user_add_button">Add</button>
+            <button id="add_button">Add</button>
         </div>
     </form>
+</div>
 
 
 {% endblock %}

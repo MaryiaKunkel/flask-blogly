@@ -6,54 +6,47 @@ button {
   border: none;
 }
 
-#user_listing_add_button {
-  background-color: grey;
+#delete_button {
+  background-color: red;
 }
 
-#content {
-  width: 500px;
+.user_detail_page #add_button,
+.post_detail_page #edit_button,
+.user_detail_page #edit_button,
+#list_of_posts #add_button {
+  background-color: rgb(0, 98, 255);
 }
 
-#content a #cancel_button {
-  position: relative;
-  top: -30px;
-  left: 140px;
-  background-color: blue;
+#title_and_content #cancel_button {
+  background-color: rgb(6, 174, 174);
 }
 
-input {
-  width: 200px;
+#title_and_content #add_button,
+.post_edit_page #edit_button {
+  background-color: green;
 }
 
-.post_edit_page {
-  display: flex;
-  /* justify-content: flex-end; */
-}
-
-#new_user_add_button,
-#save_button {
-  background-color: rgb(0, 202, 0);
-  margin-left: 220px;
-}
-
-.post_edit_page #cancel_button {
+.post_detail_page #cancel_button,
+.post_edit_page #cancel_button,
+.edit_user_page #cancel_button {
   background-color: white;
-  color: blue;
-  border: solid blue;
-  margin-top: 200px;
-  margin-left: -150px;
+  color: rgb(0, 98, 255);
+  border: solid rgb(0, 98, 255);
+}
+
+#save_button {
+  background-color: green;
+}
+
+body {
+  width: 500px;
+  /* display: flex;
+  justify-content: center; */
 }
 
 html {
-  /* width: 500px; */
   display: flex;
   justify-content: center;
-}
-
-.user_detail_page {
-  display: flex;
-  /* align-items: center; */
-  width: 500px;
 }
 
 img {
@@ -63,83 +56,94 @@ img {
   object-fit: cover;
 }
 
-.user_detail_page #edit_button {
-  background-color: blue;
-  margin-top: 0;
-  margin-left: -180px;
-}
-
-.user_detail_page #delete_button {
-  background-color: red;
-  margin-top: 50px;
-  margin-left: -100px;
-}
-
-#list_of_posts #add_post_button {
-  margin-left: 10px;
-}
-
-#list_of_posts {
-  margin-left: 210px;
-  margin-top: -100px;
-}
-
-#add_post_button,
-#new_post_cancel_button {
-  background-color: blue;
-}
-
-#name {
-  /* margin-left: 250px; */
-  margin-top: 0;
-  margin-left: 10px;
-}
-
-#title_and_content #title,
-#content {
-  margin-left: 100px;
-}
-
-#title_and_content #content {
-  margin-left: 80px;
-}
-
-#new_post_buttons {
-  margin-left: 200px;
-}
-
-#new_post_buttons {
+.user_detail_page {
   display: flex;
 }
 
-#new_post_buttons #new_post_add_button {
-  background-color: rgb(0, 202, 0);
+.user_detail_page h1 {
+  margin-left: 20px;
+  margin-top: 0;
 }
 
-#post_detail_buttons #cancel_button {
-  color: blue;
-  background-color: white;
-  border: solid blue;
+.user_detail_page #edit_button {
+  margin-left: -200px;
+  margin-top: 40px;
+  scale: 70%;
 }
 
-#post_detail_buttons #edit_button {
-  background-color: blue;
+.user_detail_page #delete_button {
+  margin-left: -140px;
+  margin-top: 40px;
+  scale: 70%;
 }
 
-#post_detail_buttons #delete_button {
-  background-color: red;
+#list_of_posts {
+  margin-left: 220px;
+  margin-top: -130px;
+}
+
+.edit_user_page {
+  position: relative;
+}
+
+.edit_user_page .form-row input {
+  position: absolute;
+  right: 0;
+  width: 400px;
+}
+
+.edit_user_page #save_button {
+  position: absolute;
+  right: 0;
+}
+
+.edit_user_page a {
+  position: absolute;
+  right: 80px;
+}
+
+.users_listing_page a button,
+.new_user_page #add_button {
+  background-color: grey;
+}
+
+#title_and_content {
+  position: relative;
+}
+
+#title_and_content input {
+  position: absolute;
+  right: 0;
+  width: 400px;
+}
+
+#title_and_content #new_post_buttons {
+  position: absolute;
+  right: 0;
 }
 
 #post_detail_buttons form {
-  width: 100px;
+  display: flex;
   margin-left: 150px;
   margin-top: -30px;
 }
 
-.post_detail_page #name {
-  margin-left: 0;
+.post_edit_page {
+  position: relative;
 }
 
-#content a {
-  margin-top: 50px;
+.post_edit_page input {
+  position: absolute;
+  right: 0;
+  width: 400px;
+}
+
+.post_edit_page #save_button {
+  position: absolute;
+  right: 0;
+}
+
+.post_edit_page a {
+  position: absolute;
+  right: 80px;
 }

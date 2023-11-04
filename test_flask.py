@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from app import app
-from models import db, User
+from models import db, User, Post
 
 # Use test database and don't clutter tests with SQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly_test'
@@ -18,10 +18,10 @@ db.create_all()
 
 
 class UserViewsTestCase(TestCase):
-    """Tests for views for Pets."""
+    """Tests for views for Users."""
 
     def setUp(self):
-        """Add sample pet."""
+        """Add sample user."""
 
         User.query.delete()
 
@@ -62,3 +62,49 @@ class UserViewsTestCase(TestCase):
 
             self.assertEqual(resp.status_code, 200)
             self.assertIn("<h1>Donald Trump</h1>", html)
+
+
+class PostViewsTestCase(TestCase):
+    """Tests for views for Posts."""
+    def setUp(self):
+        """Add sample post."""
+
+        Post.query.delete()
+
+        post = Post(title="Title", content="Content")
+        db.session.add(post)
+        db.session.commit()
+
+        self.post_id = post.id
+        self.post=post
+
+    def tearDown(self):
+        """Clean up any fouled transaction."""
+
+        db.session.rollback()
+
+    def test_list_posts(self):
+        with app.test_client() as client:
+            resp = client.get("/")
+            html = resp.get_data(as_text=True)
+
+            self.assertEqual(resp.status_code, 200)
+            self.assertIn('Content', html)
+
+    def test_show_post(self):
+        with app.test_client() as client:
+            resp = client.get(f"/posts/{self.post_id}")
+            html = resp.get_data(as_text=True)
+
+            self.assertEqual(resp.status_code, 200)
+            self.assertIn('<h1>Title</h1>', html)
+            self.assertIn(self.post.content, html)
+
+    def test_add_post(self):
+        with app.test_client() as client:
+            d = {"title": "Break news!", "Content": "Sponge Bob is not real!"}
+            resp = client.post("/", data=d, follow_redirects=True)
+            html = resp.get_data(as_text=True)
+
+            self.assertEqual(resp.status_code, 200)
+            self.assertIn("<h1>Break news!</h1>", html)
