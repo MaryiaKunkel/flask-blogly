@@ -124,9 +124,11 @@ def save_edited_post(post_id):
     return redirect(f'/posts/{post_id}')
 
 @app.route('/posts/<int:post_id>/delete', methods=['POST'])
-def delete_post(user_id, post_id):
+def delete_post(post_id):
     '''Delete post'''
-    post=Post.query.get(post_id)
+    post=Post.query.get_or_404(post_id)
+    user=User.query.get_or_404(post.user_id)
+    user_id=user.id
     db.session.delete(post)
     db.session.commit()
 
