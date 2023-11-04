@@ -10,11 +10,22 @@ button {
   background-color: grey;
 }
 
+#content {
+  width: 500px;
+}
+
+#content a #cancel_button {
+  position: relative;
+  top: -30px;
+  left: 140px;
+  background-color: blue;
+}
+
 input {
   width: 200px;
 }
 
-.container {
+.post_edit_page {
   display: flex;
   /* justify-content: flex-end; */
 }
@@ -25,7 +36,7 @@ input {
   margin-left: 220px;
 }
 
-#cancel_button {
+.post_edit_page #cancel_button {
   background-color: white;
   color: blue;
   border: solid blue;
@@ -42,7 +53,7 @@ html {
 .user_detail_page {
   display: flex;
   /* align-items: center; */
-  width: 200px;
+  width: 500px;
 }
 
 img {
@@ -52,20 +63,83 @@ img {
   object-fit: cover;
 }
 
-#edit_button {
+.user_detail_page #edit_button {
   background-color: blue;
-  margin-top: 80px;
+  margin-top: 0;
+  margin-left: -180px;
+}
+
+.user_detail_page #delete_button {
+  background-color: red;
+  margin-top: 50px;
   margin-left: -100px;
 }
 
-#delete_button {
-  background-color: red;
-  margin-top: 80px;
-  margin-left: -20px;
+#list_of_posts #add_post_button {
+  margin-left: 10px;
+}
+
+#list_of_posts {
+  margin-left: 210px;
+  margin-top: -100px;
+}
+
+#add_post_button,
+#new_post_cancel_button {
+  background-color: blue;
 }
 
 #name {
   /* margin-left: 250px; */
   margin-top: 0;
   margin-left: 10px;
+}
+
+#title_and_content #title,
+#content {
+  margin-left: 100px;
+}
+
+#title_and_content #content {
+  margin-left: 80px;
+}
+
+#new_post_buttons {
+  margin-left: 200px;
+}
+
+#new_post_buttons {
+  display: flex;
+}
+
+#new_post_buttons #new_post_add_button {
+  background-color: rgb(0, 202, 0);
+}
+
+#post_detail_buttons #cancel_button {
+  color: blue;
+  background-color: white;
+  border: solid blue;
+}
+
+#post_detail_buttons #edit_button {
+  background-color: blue;
+}
+
+#post_detail_buttons #delete_button {
+  background-color: red;
+}
+
+#post_detail_buttons form {
+  width: 100px;
+  margin-left: 150px;
+  margin-top: -30px;
+}
+
+.post_detail_page #name {
+  margin-left: 0;
+}
+
+#content a {
+  margin-top: 50px;
 }

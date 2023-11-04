@@ -1,6 +1,6 @@
 '''Seed file to make sample data for users db'''
 
-from models import User, db
+from models import User, Post, db
 from app import app
 
 # Create all tables
@@ -10,11 +10,21 @@ db.create_all()
 # If table isn't empty, empty it
 User.query.delete()
 
-# Add users
-johnnydepp=User(first_name='Johnny', last_name='Depp', image_url='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hollywoodreporter.com%2Fnews%2Fgeneral-news%2Fjohnny-depp-is-face-christian-799861%2F&psig=AOvVaw1g59WakAcNIpmpytQARGgZ&ust=1698596469764000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCODBnIyTmYIDFQAAAAAdAAAAABAE')
+# Add users and posts
+johnny_depp=User(first_name='Johnny', last_name='Depp', image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Johnny_Depp-2757_%28cropped%29.jpg/1058px-Johnny_Depp-2757_%28cropped%29.jpg')
+
+angelina_jolie=User(first_name='Angelina', last_name='Jolie', image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Under_Secretary_Zeya_Meets_With_UNHCR_Special_Envoy_Jolie_%2851942861677%29_%28cropped%29.jpg/440px-Under_Secretary_Zeya_Meets_With_UNHCR_Special_Envoy_Jolie_%2851942861677%29_%28cropped%29.jpg')
+
+jolie_post=Post(title='Hello', content='I am greeting you', users=angelina_jolie)
+depp_post=Post(title='Bye-bye', content='Firewell!', users=johnny_depp)
 
 # Add new objects to session, so they'll persist
-db.session.add(johnnydepp)
+db.session.add(johnny_depp)
+db.session.add(angelina_jolie)
 
-# Commit - otherwise, this never gets saved!
+db.session.commit()
+
+db.session.add(jolie_post)
+db.session.add(depp_post)
+
 db.session.commit()
