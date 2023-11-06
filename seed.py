@@ -15,8 +15,11 @@ johnny_depp=User(first_name='Johnny', last_name='Depp', image_url='https://uploa
 
 angelina_jolie=User(first_name='Angelina', last_name='Jolie', image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Under_Secretary_Zeya_Meets_With_UNHCR_Special_Envoy_Jolie_%2851942861677%29_%28cropped%29.jpg/440px-Under_Secretary_Zeya_Meets_With_UNHCR_Special_Envoy_Jolie_%2851942861677%29_%28cropped%29.jpg')
 
-jolie_post=Post(title='Hello', content='I am greeting you', users=angelina_jolie)
-depp_post=Post(title='Bye-bye', content='Firewell!', users=johnny_depp)
+jolie_post_1=Post(title='Hello', content='I am greeting you', users=angelina_jolie)
+jolie_post_2=Post(title='Hello again', content='I am greeting you the second time', users=angelina_jolie)
+
+depp_post_1=Post(title='Bye-bye', content='Firewall!', users=johnny_depp)
+depp_post_2=Post(title='Bye-bye again', content='Firewall my firend!', users=johnny_depp)
 
 # Add new objects to session, so they'll persist
 db.session.add(johnny_depp)

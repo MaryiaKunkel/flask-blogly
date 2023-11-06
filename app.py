@@ -2,7 +2,7 @@
 """Blogly application."""
 
 from flask import Flask, request, render_template, redirect
-from models import User, Post, db, connect_db, get_directory
+from models import User, Post, Tag, PostTag, db, connect_db, get_directory, get_directory_join, get_directory_join_class, get_directory_all_join
 
 app = Flask(__name__)
 
